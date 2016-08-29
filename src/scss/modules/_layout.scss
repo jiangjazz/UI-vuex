@@ -1,0 +1,33 @@
+@charset "UTF-8";
+body, html {
+    background-color: #eee;
+    -webkit-font-smoothing: antialiased;
+}
+// 导航栏
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  font-size: 14px;
+}
+// 主内容区域
+.main{
+  min-height: 100%;
+  margin: 0 200px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  box-shadow: 0 0 1px #ddd;
+  background: $white;
+}
+// 侧边栏
+.aside {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 100px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}

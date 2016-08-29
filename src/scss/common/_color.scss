@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/**
+ * 颜色变量 （包括文字、背景、边框等）
+ */
+ $green    : #0cc2a9;    //主色调
+ $green_hover: #0aaf98;  //
+ $lightGreen: #e1f9f3;   //  淡绿色
+ $red      : #ff6e5f;   //红色
+ $red_hover: #ee5d4d;
+ $yellow   : #fec837;   //黄色
+ $black     : #666666;   //黑色
+ $gray     : #cccccc;   //灰色
+ $blue     : #f3f2f9;   //淡紫色
+ $white    : #ffffff;   //白色
+
+ //边框
+ $bdColor   : #cccccc; //默认普通灰色边框
+ $bdFocus   : #0cc2a9; //默认普通灰色边框获得焦点
+ $bdSuccess   : #0cc2a9; //success颜色
+
+ //背景色
+ $bgInfo: #f2f2f2;   //默认背景色
+ $bgColor1  : #cccccc;  //背景————灰色
+ $bgError  : #fed8d2;  //错误信息文字颜色，————目前红色
+
+ $color_shade1 : rgba(0, 0, 0, 0.15);  //透明背景色 弹层等使用
+ $color_shade2 : rgba(0, 0, 0, 0.6);  //透明背景色 弹层等使用
+
+ $bgMsg: #e6e5eb; // 对话框背景色
+ //文本颜色
+ $fColor: #333333;  //正常文本颜色——————黑色
+ $fColor2: #666666;  //弱化文本颜色——————灰色
+ $fColor3: #999999;
+ $fDisabled: #cccccc;  //弱化文本颜色——————灰色
+
+ //语义化颜色
+ $m_important  : #ff6e5f;  //重要，强调————目前红色
+ $m_error  : #ff6e5f;  //错误信息文字颜色，————目前红色
+
+ $fSuccess  : #18643a;  //成功信息颜色——————绿色
+ $m_success  : #0cc2aa;  //成功信息颜色——————绿色
+
+ //阴影
+ $shadow  : #d8dde4; //普通阴影
+
+ //字号
+ $f_size1 :12px;  //文本字体大小————12px
+ $f_size2 :14px;  //文本字体大小————13px
+ $f_size3 :16px;  //文本字体大小————14px
+ $f_size4 :18px;  //文本字体大小————15px
+ $f_size5 :20px;  //文本字体大小————16px

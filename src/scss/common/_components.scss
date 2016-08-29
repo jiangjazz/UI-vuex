@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/**
+ * 组件
+ */
+
+//分页模块
+.u-pagination{
+    .goPage{
+        display: inline-block;
+        .u-input{
+            display: inline-block;
+            vertical-align: middle;
+            .form-control{
+                margin: 0 5px;
+                padding-left: .3em;
+                padding-right: .3em;
+                min-width: 2em;
+                max-width: 3em;
+                text-align: center;
+            }
+        }
+        .u-btn{
+            margin-left: 20px;
+        }
+    }
+    .pagination{
+        margin: 0 0 0 .5rem;
+        vertical-align: middle;
+        border: 1px solid $bdColor;
+        @include box-shadow(0 1px 2px 0 $bdColor);
+        @include border-radius(0.3rem);
+        >.item{
+            display: inline-block;
+            padding: 0 1.14em;
+            min-width: 3em;
+            height: 34px;
+            text-align: center;
+            line-height: 34px;
+            float: left;
+            position: relative;
+            color: #8d94a1;
+            &:first-child {
+                @include border-radius(0.3rem 0 0 0.3rem);
+            }
+            &:last-child {
+                @include border-radius(0 0.3rem 0.3rem 0);
+            }
+            &:before {
+                position: absolute;
+                content: '';
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 1px;
+                background: $bdColor;
+            }
+        }
+        >a.item{
+            &:hover{
+                background-color: #e8f7ff;
+                @include box-shadow(none);
+            }
+            &.active{
+                background-color: #daeef8;
+                @include box-shadow(none);
+            }
+        }
+    }
+
+}

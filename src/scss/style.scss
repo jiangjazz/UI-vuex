@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/************************************************************
+ * 入口文件
+ */
+@import 'common/style';     //UI基础 包含全局变量等
+@import 'base/style';       //reset等
+@import 'modules/style';    //模块样式

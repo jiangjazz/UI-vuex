@@ -1,6 +1,6 @@
-# vuexui
+# journey
 
-> Self UI with vuex
+> Jazz's vuex project named journey
 
 ## Build Setup
 
