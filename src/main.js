@@ -13,6 +13,6 @@ const Base = Vue.extend({
 
 const router = new VueRouter()
 
-require('./routes/routes')(router)
+require('./config/routes')(router)
 
 router.start(Base, 'body')

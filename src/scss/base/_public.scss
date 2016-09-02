@@ -1,4 +1,582 @@
 @charset "UTF-8";
 /**
- * page页面公用样式
+ * 组件样式
  */
+ /********************************************************************************\
+   按钮模块
+   .u-btn
+   + .main       主色调按钮
+   + .secondary  副色调按钮   黑色
+   + .default   默认样式，不写该class会导致没有边框
+ \********************************************************************************/
+
+ %btn {
+     height: 30px;
+     display: inline-block;
+     vertical-align: middle;
+     text-decoration: none;
+     font-size: 12px;
+     line-height: 28px;
+     color: $white;
+     border: 0;
+     outline: none;
+     padding: 0 20px;
+     margin: 0;
+     background: none;
+     cursor: pointer;
+     @include box-sizing(border-box);
+     @include border-radius(3px);
+     // @include box-shadow(0 0px 1px 0px $fColor);
+     &:hover {
+         color: $white;
+         text-decoration: none;
+     }
+     &[disabled],
+     &.disabled {
+         background: $bgDisabled !important;
+         border: solid 1px $bdColor !important;
+         color: $disabled;
+         cursor: no-drop;
+     }
+ }
+.u-btn{
+  @extend %btn;
+  &.default{
+    color: $fColor;
+    background: $white;
+    border: 1px solid $bdColor;
+    &:hover{
+      border: 1px solid $bdColor *1.1;
+    }
+  }
+  &.main{
+    background: $main;
+    border-bottom: 1px solid $main*1.1;
+    &:hover{
+      background: $mainHover;
+      border-bottom: 1px solid $main;
+    }
+  }
+  &.secondary{
+    background: $secondary;
+    border-bottom: 1px solid $secondary *1.1;
+    &:hover{
+      background: $secondaryHover;
+      border-bottom: 1px solid $secondary;
+    }
+  }
+}
+
+/********************************************************************************\
+  select下拉菜单
+  .u-select   默认样式
+  + .auto       自动缩放
+  + .main       主色调
+  + .secondary  副色调
+\********************************************************************************/
+%select {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 5;
+    font-size: 12px;
+    line-height: 0;
+    background: $white;
+    &:hover{
+      >.u-hd {
+        >b{
+          border-top-color: transparent;
+          border-bottom-color: $bdColor;
+          margin-top: 7px;
+        }
+      }
+      >.u-bd{
+        padding: 5px 0 0 0;
+        ul{
+          border: solid 1px $bdColor;
+          a{
+            height: 30px;
+          }
+        }
+      }
+    }
+    >.u-hd {
+        margin: 0;
+        padding: 0 10px;
+        border: solid 1px $bdColor;
+        outline: none;
+        font-size: 12px;
+        color: $fColor;
+        display: inline-block;
+        vertical-align: middle;
+        background: none;
+        text-decoration: none;
+        cursor: pointer;
+        height: 30px;
+        line-height: 29px;
+        position: relative;
+        @include box-sizing(border-box);
+        @include border-radius(3px);
+        //@include box-shadow(0 1px 0 #bbb8de);
+        >b {
+            float: right;
+            width: 0;
+            height: 0;
+            border: solid 5px transparent;
+            border-top-color: $bdColor;
+            margin: 12px -5px 0 5px;
+            @include transition(all .3s ease);
+        }
+        >span {
+            max-width: 100px;
+            min-width: 40px;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    >.u-bd {
+        width: 125px;
+        position: absolute;
+        left: 0;
+        top: 29px;
+    }
+    ul {
+        width: 100%;
+        max-height: 155px;
+        overflow-y: auto;
+        background: $white;
+        @include border-radius(3px);
+        @include box-sizing(border-box);
+        @include box-shadow(2px 2px 1px $shadow);
+        a {
+            font-size: 12px;
+            display: block;
+            height: 0px;
+            line-height: 30px;
+            padding: 0 0 0 15px;
+            color: $fColor;
+            border-left: solid 4px $white;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            @include transition(height .3s ease);
+            &:hover {
+                background: $bgInfo;
+                color: $fColor;
+                text-decoration: none;
+                border-left: solid 4px $bdColor;
+            }
+        }
+        b {
+            float: right;
+            width: 0;
+            height: 0;
+            border: solid 5px transparent;
+            border-top-color: $bdColor;
+            margin: 12px -5px 0 5px;
+        }
+    }
+    &.disabled,
+    &[disabled]{
+        color: $disabled !important;
+        >.u-hd {
+          color: $disabled !important;
+          background: $bgDisabled !important;
+          border: solid 1px $bdColor !important;
+          cursor: no-drop !important;
+          >b{
+            margin-top: 12px !important;
+            border-top-color: $bdColor !important;
+            border-bottom-color: transparent !important;
+          }
+        }
+        &:hover{
+          >.u-bd{
+            padding: 0 !important;
+            ul{
+              border: none !important;
+              a{
+                height: 0px !important;
+              }
+            }
+          }
+        }
+    }
+}
+.u-select{
+  @extend %select;
+  &.auto {
+      >.u-hd {
+          >span {
+              max-width: none;
+          }
+      }
+      >.u-bd {
+          width: auto;
+          a {
+              padding: 0 10px;
+          }
+      }
+  }
+  &.main{
+    >.u-hd {
+        border: none;
+        background: $main;
+        border-bottom: solid 1px $main/1.3;
+        color: $white;
+        >b {
+            border-top-color: $white;
+        }
+    }
+    &:hover {
+        >.u-hd {
+            background: $mainHover;
+            >b {
+                border-top-color: transparent;
+                border-bottom-color: $white;
+            }
+        }
+    }
+    ul a:hover {
+        border-left-color: $main;
+    }
+  }
+  &.secondary{
+    >.u-hd {
+        border: none;
+        background: $secondary;
+        border-bottom: solid 1px $secondary/1.3;
+        color: $white;
+        >b {
+            border-top-color: $white;
+        }
+    }
+    &:hover {
+        >.u-hd {
+            background: $secondaryHover;
+            >b {
+                border-top-color: transparent;
+                border-bottom-color: $white;
+            }
+        }
+    }
+    ul a:hover {
+        border-left-color: $secondary;
+    }
+  }
+}
+
+/********************************************************************************\
+  text与textarea输入框样式【默认宽度为100%,textarea默认高度为90px】
+\********************************************************************************/
+
+%inputtextarea {
+    width: 100%;
+    height: 30px;
+    line-height: 18px;
+    margin: 0;
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    border: solid 1px $bdColor;
+    @include border-radius(3px);
+    @include box-sizing(border-box);
+    @include box-shadow(inset 0 1px 1px $shadow);
+    &:focus {
+        border-color: $bdFocus;
+        @include box-shadow(none);
+    }
+}
+input[class^="u-input"] {
+    @extend %inputtextarea;
+    height: 30px;
+    vertical-align: middle;
+    &.mini {
+        height: 25px;
+    }
+}
+textarea[class^="u-textarea"] {
+    @extend %inputtextarea;
+    height: 90px;
+}
+
+/********************************************************************************\
+  单选款复选框模块
+  .u-checkbox       复选框
+  .u-radio          单选框
+\********************************************************************************/
+
+%checkboxradio {
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0 0 30px;
+    position: relative;
+    cursor: pointer;
+    b {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: -1px;
+        left: 0;
+        display: none \9;
+    }
+    span {
+        display: block;
+        height: 30px;
+        line-height: 27px;
+    }
+    input {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        top: 9px \9;
+        left: 7px \9;
+        z-index: 2 \9;
+    }
+    input:disabled + b + span {
+        @include opacity(50);
+        cursor: no-drop;
+    }
+    input:disabled + b {
+        @include opacity(50);
+        cursor: no-drop;
+    }
+}
+.u-checkbox {
+    @extend %checkboxradio;
+    b {
+        @include icon-sprite;
+        @include icon-check;
+    }
+    input:hover + b {
+        @include icon-check-hover;
+    }
+    input:checked + b {
+        @include icon-check-active;
+    }
+    input:hover:disabled + b {
+        @include icon-check;
+    }
+    input:hover:disabled:checked + b {
+        @include icon-check-active;
+    }
+}
+.u-radio {
+    @extend %checkboxradio;
+    b {
+        @include icon-sprite;
+        @include icon-radio;
+    }
+    input:hover + b {
+        @include icon-radio-hover;
+    }
+    input:checked + b {
+        @include icon-radio-active;
+    }
+    input:hover:disabled + b {
+        @include icon-radio;
+    }
+    input:hover:disabled:checked + b {
+        @include icon-radio-active;
+    }
+}
+
+/********************************************************************************\
+  .u-search  搜索
+\********************************************************************************/
+
+%search {
+    display: inline-block;
+    height: 30px;
+    // border: solid 1px $bdColor;
+    font-size: 12px;
+    // padding: 0 5px 0 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 15px;
+    position: relative;
+    input {
+        padding: 4px 35px 4px 15px;
+        width: 170px;
+        height: 20px;
+        line-height: 20px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border: solid 1px $bdColor;
+        @include border-radius(15px);
+        &:focus + b {
+            @include icon-sprite;
+            @include icon-search-active;
+        }
+    }
+    b {
+        width: 28px;
+        height: 22px;
+        cursor: pointer;
+        position: absolute;
+        top: 4px;
+        right: 5px;
+        @include icon-sprite;
+        @include icon-search;
+    }
+}
+.u-search{
+  @extend %search;
+  input{
+    &.disabled,
+    &[disabled]{
+      padding: 5px 35px 5px 15px;
+      background: $bgInfo;
+      border: none;
+      cursor: no-drop;
+      &+b{
+        cursor: no-drop;
+      }
+    }
+  }
+}
+
+/********************************************************************************\
+  .u-form     表单组
+\********************************************************************************/
+
+%formGroup{
+  label[class^="u-label"]{
+    display: inline-block;
+    padding: 0 10px 0 0;
+    line-height: 30px;
+    vertical-align: top;
+    &.required,
+    &[required]{
+      padding-left: 15px;
+      position: relative;
+      &:before{
+        content: '*';
+        position: absolute;
+        left: 2px;
+        top:0;
+        color: $main;
+        line-height: 30px;
+      }
+    }
+  }
+  input[class^="u-input"],
+  textarea[class^="u-textarea"]{
+    display: inline-block;
+    width: auto;
+    line-height: 30px;
+  }
+}
+.u-form{
+  @extend %formGroup;
+  .u-group{
+    display: inline-block;
+  }
+}
+/********************************************************************************\
+  .u-prompt 方框样式的报错形式
+  .u-group 表单样式的报错形式
+\********************************************************************************/
+%group{
+  margin-bottom: 30px;
+  position: relative;
+  .prompt{
+    display: none;
+    height: 30px;
+    line-height: 30px;
+    color: $error;
+    font-size: $f_size2;
+    text-indent: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 2px;
+      @extend .icon-sprite;
+      @extend .icon-error;
+    }
+  }
+  &.error{
+    .u-input,
+    .u-textarea{
+      border-color: $bdError;
+      @include box-shadow(none);
+    }
+    .prompt{
+      display: block;
+    }
+  }
+}
+
+.u-group{
+  @extend %group;
+}
+%promptGroup{
+  margin-bottom: 30px;
+  position: relative;
+  .prompt{
+      display: none;
+      width: 100%;
+      height: 30px;
+      position: absolute;
+      top: 100%;
+      left: 0px;
+      font-size: $f_size2 !important;
+      line-height: 30px;
+      text-indent: 20px;
+      @include border-radius(3px);
+  }
+}
+.u-prompt{
+  @extend %promptGroup;
+  &.error{
+      input[type="text"],
+      input[type="password"],
+      input[type="number"],
+      select{
+          border-color: $bdError2 !important;
+      }
+      .prompt{
+          display: block;
+          color: $error2;
+          background-color: $bgError2;
+          border: 1px solid $bdError2;
+          &:before{
+              content: '';
+              margin-top: -8px;
+              position: absolute;
+              top: 50%;
+              left: 2px;
+              @include icon-sprite();
+              @include icon-prompt-error();
+          }
+      }
+  }
+  &.success{
+      .prompt{
+          display: block;
+          background-color: $bgSuccess;
+          border: 1px solid $bdSuccess;
+          &:before{
+              content: '';
+              margin-top: -7px;
+              position: absolute;
+              top: 50%;
+              left: 2px;
+              @include icon-sprite();
+              @include icon-prompt-success();
+          }
+      }
+  }
+}
