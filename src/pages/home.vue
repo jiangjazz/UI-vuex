@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+
   </div>
 
   <style media="screen">
@@ -13,6 +14,7 @@
       <td>
         <div class="u-btn main" title="main">按钮</div>
         <div class="u-btn secondary" title="secondary">按钮</div>
+        <div class="u-btn info" title="info">按钮</div>
         <div class="u-btn default" title="default">按钮</div>
         <div class="u-btn main disabled" title="disabled">按钮</div>
         <div class="u-btn main" disabled title="disabled">按钮</div>
@@ -92,6 +94,11 @@
       </td>
     </tr>
 
+    <tr>
+      <td>
+        <Datepicker></Datepicker>
+      </td>
+    </tr>
 
     <tr>
       <td>
@@ -251,11 +258,27 @@
 </template>
 
 <script>
+// 获取读写数据方法
+import {setActNav} from '../vuex/action'
+// 获取组件
+import Datepicker from '../components/datepicker.vue'
 export default {
   data () {
     return {
       msg: '组件样式'
     }
+  },
+  vuex: {
+    actions: {
+      // 设置当前导航栏
+      setActNav
+    }
+  },
+  components: {
+    Datepicker
+  },
+  created () {
+    this.setActNav('home')
   }
 }
 </script>

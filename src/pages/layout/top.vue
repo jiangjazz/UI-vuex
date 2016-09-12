@@ -6,18 +6,13 @@
     <!-- 激活相应区域添加类 active -->
     <dl class="u-nav">
         <dt class="u-menu" @mouseenter="showNav" @mouseleave="hideNav">
-            <b class="u-icon-logo"></b>
+            <b class="icon-sprite icon-logo"></b>
             <span class="journey">Journey</span>
         </dt>
-        <dd class="active"><a href="/#!/">首页</a></dd>
-        <dd><a href="/#!/paging">一些东西{{navLoop}}</a></dd>
+        <dd :class="{active: actNav=='home'}"><a href="/#!/">{{lang.TOP_NAV_HOME}}</a></dd>
+        <dd :class="{active: actNav=='trip'}"><a href="/#!/trip">{{lang.TOP_NAV_TRIP}}</a></dd>
+        <dd :class="{active: actNav=='report'}"><a href="/#!/report">{{lang.TOP_NAV_REPORT}}</a></dd>
     </dl>
-    <!-- <div class="u-more">
-        <span>更多</span>
-        <ul>
-            <li><a href="javascript:;">数据同步</a></li>
-        </ul>
-    </div> -->
 
     <div class="u-userCenter f-fr">
         <a href="http://dmayun.com/#!/shop/prepaid/" class="goShopping f-ib f-vam">
@@ -80,10 +75,6 @@
         </li>
         <li>
             <a href="javascript:;">
-                <img src="../../images/logo-smg.png" width="100" height="120" alt=""></a>
-        </li>
-        <li>
-            <a href="javascript:;">
                 <img src="../../images/logo-journey.png" width="100" height="120" alt=""></a>
         </li>
     </ul>
@@ -92,7 +83,9 @@
 
 <script>
 import $ from 'jquery'
-
+// 获取读写数据方法
+import {getLang, getActNav} from '../../vuex/getter'
+// 定义公用方法
 const act = {
   // 切换用户详情数据下拉菜单
   hideUserDetial () {
@@ -115,9 +108,14 @@ export default {
       navLoop: 0
     }
   },
+  vuex: {
+    getters: {
+      lang: getLang,
+      actNav: getActNav
+    }
+  },
   ready () {
     $(document).on('click', act.hideUserDetial)
-    // $(document).on('mouseleave', act.hideNav)
   },
   methods: {
     // 切换显示头部下拉菜单

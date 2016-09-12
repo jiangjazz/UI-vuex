@@ -113,6 +113,26 @@ input[class^="u-input"] {
         height: 25px;
     }
 }
+.i-date{
+  margin: 0 8px 0 4px;
+  position: relative;
+  input[class^="u-input"]{
+    width: 115px;
+    padding-right: 30px;
+    &:focus + b{
+      @include icon-date-active;
+    }
+  }
+  &>b{
+    content: '';
+    margin-top: -8px;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    @include icon-sprite;
+    @include icon-date;
+  }
+}
 textarea[class^="u-textarea"] {
     @extend %inputtextarea;
     height: 90px;
@@ -144,7 +164,6 @@ textarea[class^="u-textarea"] {
   input[class^="u-input"],
   textarea[class^="u-textarea"]{
     display: inline-block;
-    width: auto;
     line-height: 30px;
   }
 }

@@ -1,3 +1,5 @@
 @charset "UTF-8";
 
-@import "top";  //头部样式
+@import "public";      //公用样式
+@import "top";      //头部样式
+@import "report";   //报告模块

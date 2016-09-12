@@ -12,12 +12,15 @@ module.exports = {
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
     filename: '[name].js'
   },
+  externals: {
+    'wdatepicker': 'Wdatepicker'
+  },
   resolve: {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
-      'assets': path.resolve(__dirname, '../src/assets'),
+      'images': path.resolve(__dirname, '../src/images'),
       'components': path.resolve(__dirname, '../src/components')
     }
   },
@@ -30,13 +33,13 @@ module.exports = {
         test: /\.vue$/,
         loader: 'eslint',
         include: projectRoot,
-        exclude: /node_modules/
+        exclude: [/node_modules/, /datepicker/]
       },
       {
         test: /\.js$/,
         loader: 'eslint',
         include: projectRoot,
-        exclude: /node_modules/
+        exclude: [/node_modules/, /plugin/]
       }
     ],
     loaders: [

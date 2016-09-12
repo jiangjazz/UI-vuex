@@ -29,7 +29,7 @@ a,a:hover{color:$fColor;}
 
 fieldset{border: 1px solid $bdColor;}
 legend{font-size: $f_size2;font-weight: bold;}
-html,body{font-family: "Microsoft YaHei",Helvetica,Arial,sans-serif;}
+html,body{font-family: "Microsoft YaHei", arial, sans-serif, 宋体;}
 
 /* function */
 .f-cb:after,.f-cbli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}

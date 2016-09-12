@@ -17,7 +17,13 @@
 @mixin icon-error{height:15px;width:15px;background-position:-236px 0;}
 @mixin icon-prompt-error{height:15px;width:15px;background-position:-251px 0;}
 @mixin icon-prompt-success{height:15px;width:15px;background-position:-266px 0;}
-
+@mixin icon-logo{height:22px;width:22px;background-position:-281px 0;}
+@mixin icon-info{height:10px;width:6px;background-position:-303px 0;}
+@mixin icon-date{height:16px;width:16px;background-position:-309px 0;}
+@mixin icon-tip{height:21px;width:30px;background-position:-325px 0;}
+@mixin icon-back{height:17px;width:16px;background-position:-355px 0;}
+@mixin icon-data{height:18px;width:15px;background-position:-371px 0;}
+@mixin icon-date-active{height:16px;width:16px;background-position:-386px 0;}
 
 .icon-sprite{background:url(../images/icon/icon-sprite.png) no-repeat ;}
 .icon-search{height:22px;width:28px;background-position:0 0;}
@@ -31,6 +37,27 @@
 .icon-error{height:15px;width:15px;background-position:-236px 0;}
 .icon-prompt-error{height:15px;width:15px;background-position:-251px 0;}
 .icon-prompt-success{height:15px;width:15px;background-position:-266px 0;}
+.icon-logo{height:22px;width:22px;background-position:-281px 0;}
+.icon-info{height:10px;width:6px;background-position:-303px 0;}
+.icon-date{height:16px;width:16px;background-position:-309px 0;}
+.icon-tip{height:21px;width:30px;background-position:-325px 0;}
+.icon-back{height:17px;width:16px;background-position:-355px 0;}
+.icon-data{height:18px;width:15px;background-position:-371px 0;}
+.icon-date-active{height:16px;width:16px;background-position:-386px 0;}
+
+// large-sprite
+@mixin large-sprite{background:url(../images/large/large-sprite.png) no-repeat ;}
+@mixin large-email{height:63px;width:63px;background-position:0 0;}
+@mixin large-message{height:63px;width:63px;background-position:-63px 0;}
+
+.large-sprite{background:url(../images/large/large-sprite.png) no-repeat ;}
+.large-email{height:63px;width:63px;background-position:0 0;}
+.large-message{height:63px;width:63px;background-position:-63px 0;}
+
+
+
+
+
 
 // 头部图标
 @mixin topIcon{background:url(../images/top/topIcon.png) no-repeat ;}
@@ -52,4 +79,5 @@
 
 
 .icon-sprite,
+.large-sprite,
 .topIcon{display: inline-block; vertical-align: middle;}

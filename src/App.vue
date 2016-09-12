@@ -8,18 +8,23 @@
 
 <script>
 import store from './vuex/store'
-import {alertMsg} from './vuex/action'
+import {initLang} from './vuex/action'
 // 头部模块
 import Top from './pages/layout/top.vue'
 
 export default {
-  vuex: {
-    actions: {
-      alertMsg
+  data () {
+    return {
     }
   },
-  data () {
-    return {}
+  vuex: {
+    actions: {
+      // 初始化语言
+      initLang
+    }
+  },
+  created () {
+    this.initLang('cn')
   },
   components: {
     Top

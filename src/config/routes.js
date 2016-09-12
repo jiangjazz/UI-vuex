@@ -8,11 +8,38 @@ module.exports = function (router) {
         require(['../pages/home.vue'], resolve)
       }
     },
-    '/paging': {
+    '/trip': {
       component: function (resolve) {
-        require(['../pages/paging.vue'], resolve)
+        require(['../pages/trip/trip.vue'], resolve)
+      }
+    },
+    '/report': {
+      component: function (resolve) {
+        require(['../pages/report/report.vue'], resolve)
+      },
+      subRoutes: {
+        '/': {
+          component: function (resolve) {
+            require(['../pages/report/total/reportTotal.vue'], resolve)
+          }
+        },
+        '/contrast': {
+          component: function (resolve) {
+            require(['../pages/report/contrast/reportContrast.vue'], resolve)
+          }
+        },
+        '/export': {
+          component: function (resolve) {
+            require(['../pages/report/export/reportExport.vue'], resolve)
+          }
+        }
       }
     }
+    // '/paging': {
+    //   component: function (resolve) {
+    //     require(['../pages/paging.vue'], resolve)
+    //   }
+    // }
   })
   // 重定向
   router.redirect({

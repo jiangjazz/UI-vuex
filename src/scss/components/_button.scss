@@ -38,6 +38,7 @@
          cursor: no-drop;
      }
  }
+// 颜色
 .u-btn{
   @extend %btn;
   &.default{
@@ -62,6 +63,14 @@
     &:hover{
       background: $secondaryHover;
       border-bottom: 1px solid $secondary;
+    }
+  }
+  &.info{
+    background: $info;
+    border-bottom: 1px solid $info *1.1;
+    &:hover{
+      background: $infoHover;
+      border-bottom: 1px solid $info;
     }
   }
 }

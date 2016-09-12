@@ -1,26 +1,18 @@
 <template>
-    <div class="u-pagination f-cb" onselectstart="return false;" unselectable="on">
-        <div class="goPage">
-            跳转至第
-            <div class="u-input">
-                <input type="text" placeholder="页码" class="form-control" max="1"></div>
-            页
-            <a class="u-btn small info f-vam" href="javascript:;">确定</a>
-        </div>
-
-        <div class="pagination f-fr">
-            <a class="icon item" href="javascript:;">&lt;</a>
-            <!--ms-if-->
-            <!--ms-if-->
-            <!--ms-if-->
-            <a class="item active" href="javascript:;">1</a>
-            <!--ms-if-->
-            <!--ms-if-->
-            <!--ms-if-->
-            <a class="icon item" href="javascript:;">&gt;</a>
-        </div>
-
-    </div>
+  <div class="u-page">
+    <span class="text">结果 1-10 对于 11条记录</span>
+      <span class="pager">
+      <dl class="btn">
+        <dt>
+          <a class="prev hidden" href="javascript:;">&lt;</a>
+        </dt>
+        <dd>
+          <a class="next" href="javascript:;">&gt;</a>
+        </dd>
+      </dl>
+      <input type="text" name="name" value="" class="input">
+    </span>
+  </div>
 </template>
 
 <script>
@@ -31,10 +23,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1 {
-  color: #42b983;
-}
-</style>
