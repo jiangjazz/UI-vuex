@@ -1,6 +1,6 @@
-# journey
+# VUEX的一些小测试
 
-> Jazz's vuex project named journey (一些小应用罢了)
+> Jazz's vuex UI project  (一些小应用罢了)
 
 
 ## 编译顺序
