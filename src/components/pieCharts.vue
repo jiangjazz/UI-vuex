@@ -24,6 +24,10 @@ export default {
     date: {
       type: Number,
       default: 0
+    },
+    size: {
+      type: Number,
+      default: 26
     }
   },
   ready () {
@@ -64,7 +68,7 @@ export default {
               formatter: '{d}%',
               position: 'center',
               textStyle: {
-                fontSize: '26',
+                fontSize: this.size,
                 fontWeight: 'bold'
               }
             }

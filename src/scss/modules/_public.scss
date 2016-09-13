@@ -46,6 +46,10 @@ $leftNavW: 205px;
     font-size: $f_size2;
     text-indent: 15px;
     line-height: 1.2em;
+    font-weight: bold;
+    span{
+      font-weight: normal;
+    }
   }
 }
 
