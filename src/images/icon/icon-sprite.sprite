@@ -19,5 +19,7 @@
     <Sprite Path="icon-back.png" LocationX="355" LocationY="0" />
     <Sprite Path="icon-data.png" LocationX="371" LocationY="0" />
     <Sprite Path="icon-date-active.png" LocationX="386" LocationY="0" />
+    <Sprite Path="icon-go.png" LocationX="402" LocationY="0" />
+    <Sprite Path="icon-trip.png" LocationX="416" LocationY="0" />
   </SpriteList>
 </SpriteFile>

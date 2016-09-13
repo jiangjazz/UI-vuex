@@ -24,6 +24,8 @@
 @mixin icon-back{height:17px;width:16px;background-position:-355px 0;}
 @mixin icon-data{height:18px;width:15px;background-position:-371px 0;}
 @mixin icon-date-active{height:16px;width:16px;background-position:-386px 0;}
+@mixin icon-go{height:13px;width:14px;background-position:-402px 0;}
+@mixin icon-trip{height:40px;width:41px;background-position:-416px 0;}
 
 .icon-sprite{background:url(../images/icon/icon-sprite.png) no-repeat ;}
 .icon-search{height:22px;width:28px;background-position:0 0;}
@@ -44,6 +46,8 @@
 .icon-back{height:17px;width:16px;background-position:-355px 0;}
 .icon-data{height:18px;width:15px;background-position:-371px 0;}
 .icon-date-active{height:16px;width:16px;background-position:-386px 0;}
+.icon-go{height:13px;width:14px;background-position:-402px 0;}
+.icon-trip{height:40px;width:41px;background-position:-416px 0;}
 
 // large-sprite
 @mixin large-sprite{background:url(../images/large/large-sprite.png) no-repeat ;}

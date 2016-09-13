@@ -53,7 +53,7 @@
       left: 0px;
       font-size: $f_size2 !important;
       line-height: 30px;
-      text-indent: 20px;
+      text-indent: 25px;
       @include border-radius(3px);
   }
 }
@@ -76,7 +76,7 @@
               margin-top: -8px;
               position: absolute;
               top: 50%;
-              left: 2px;
+              left: 5px;
               @include icon-sprite();
               @include icon-prompt-error();
           }
@@ -93,7 +93,7 @@
               margin-top: -7px;
               position: absolute;
               top: 50%;
-              left: 2px;
+              left: 5px;
               @include icon-sprite();
               @include icon-prompt-success();
           }
